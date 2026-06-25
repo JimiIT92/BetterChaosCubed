@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "gunpowder",
+  "key": {
+    "#": "betterchaoscubed:sulfur_powder",
+    "X": "minecraft:charcoal"
+  },
+  "pattern": [
+    "#X",
+    "X#"
+  ],
+  "result": {
+    "id": "minecraft:gunpowder",
+    "count": 2
+  }
+}
