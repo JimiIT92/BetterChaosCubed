@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "betterchaoscubed:item/sulfur"
+    "layer0": "betterchaoscubed:item/sulfur_powder"
   }
 }

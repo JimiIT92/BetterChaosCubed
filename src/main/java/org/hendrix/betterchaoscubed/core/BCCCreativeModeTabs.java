@@ -1,12 +1,17 @@
 package org.hendrix.betterchaoscubed.core;
 
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import org.hendrix.betterchaoscubed.BetterChaosCubed;
@@ -26,10 +31,13 @@ public final class BCCCreativeModeTabs {
             FabricCreativeModeTab.builder()
                     .icon(() -> new ItemStack(Blocks.SULFUR))
                     .title(Component.translatable("creativeTab." + BetterChaosCubed.MOD_ID + "." + BetterChaosCubed.MOD_ID))
-                    .displayItems((params, output) -> addContent(
-                            output,
-                            BCCItems.SULFUR
-                    ))
+                    .displayItems((params, output) -> {
+                        addContent(
+                                output,
+                                BCCItems.SULFUR_POWDER
+                        );
+                        addNauseaPotionItems(params, output);
+                    })
                     .build()
     );
 
@@ -46,6 +54,19 @@ public final class BCCCreativeModeTabs {
     }
 
     /**
+     * Add tipped arrow and potions of Nausea
+     *
+     * @param itemDisplayParameters The {@link CreativeModeTab.ItemDisplayParameters}
+     * @param output The {@link CreativeModeTab.Output}
+     */
+    private static void addNauseaPotionItems(final CreativeModeTab.ItemDisplayParameters itemDisplayParameters, final CreativeModeTab.Output output) {
+        output.accept(PotionContents.createItemStack(Items.TIPPED_ARROW, BCCPotions.NAUSEA));
+        output.accept(PotionContents.createItemStack(Items.POTION, BCCPotions.NAUSEA));
+        output.accept(PotionContents.createItemStack(Items.SPLASH_POTION, BCCPotions.NAUSEA));
+        output.accept(PotionContents.createItemStack(Items.LINGERING_POTION, BCCPotions.NAUSEA));
+    }
+
+    /**
      * Register a {@link CreativeModeTab}
      *
      * @param name The creative mode tab name
@@ -58,10 +79,31 @@ public final class BCCCreativeModeTabs {
     }
 
     /**
+     * Check if the {@link ItemStack} has a Nausea potion content
+     *
+     * @param itemStack The {@link ItemStack}
+     * @return True if the {@link ItemStack} has a Nausea potion content
+     */
+    private static boolean hasNauseaPotion(final ItemStack itemStack) {
+        final PotionContents potionContents = itemStack.get(DataComponents.POTION_CONTENTS);
+        if(potionContents != null) {
+            return potionContents.is(BCCPotions.NAUSEA);
+        }
+        return false;
+    }
+
+    /**
      * Register all creative mode tabs
      */
     public static void register() {
-
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(output -> {
+            output.getSearchTabStacks().removeIf(BCCCreativeModeTabs::hasNauseaPotion);
+            output.getDisplayStacks().removeIf(BCCCreativeModeTabs::hasNauseaPotion);
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(output -> {
+            output.getSearchTabStacks().removeIf(BCCCreativeModeTabs::hasNauseaPotion);
+            output.getDisplayStacks().removeIf(BCCCreativeModeTabs::hasNauseaPotion);
+        });
     }
 
 }

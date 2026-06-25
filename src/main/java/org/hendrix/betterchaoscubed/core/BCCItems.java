@@ -17,7 +17,7 @@ public final class BCCItems {
 
     //#region Items
 
-    public static final Item SULFUR = register("sulfur", Item::new, new Item.Properties());
+    public static final Item SULFUR_POWDER = register("sulfur_powder", Item::new, new Item.Properties());
 
     //#endregion
 
