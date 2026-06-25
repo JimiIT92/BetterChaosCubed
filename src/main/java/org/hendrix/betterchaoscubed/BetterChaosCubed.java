@@ -1,6 +1,8 @@
 package org.hendrix.betterchaoscubed;
 
 import net.fabricmc.api.ModInitializer;
+import org.hendrix.betterchaoscubed.core.BCCCreativeModeTabs;
+import org.hendrix.betterchaoscubed.core.BCCItems;
 
 /**
  * Better Chaos Cubed.
@@ -9,10 +11,17 @@ import net.fabricmc.api.ModInitializer;
 public final class BetterChaosCubed implements ModInitializer {
 
     /**
+     * The {@link String Mod ID}
+     */
+    public static final String MOD_ID = "betterchaoscubed";
+
+    /**
      * Initialize the mod
      */
     @Override
     public void onInitialize() {
+        BCCItems.register();
+        BCCCreativeModeTabs.register();
     }
 
 }
