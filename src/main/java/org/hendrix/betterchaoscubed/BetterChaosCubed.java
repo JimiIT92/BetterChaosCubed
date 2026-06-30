@@ -1,9 +1,7 @@
 package org.hendrix.betterchaoscubed;
 
 import net.fabricmc.api.ModInitializer;
-import org.hendrix.betterchaoscubed.core.BCCCreativeModeTabs;
-import org.hendrix.betterchaoscubed.core.BCCItems;
-import org.hendrix.betterchaoscubed.core.BCCPotions;
+import org.hendrix.betterchaoscubed.core.*;
 
 /**
  * Better Chaos Cubed.
@@ -22,6 +20,8 @@ public final class BetterChaosCubed implements ModInitializer {
     @Override
     public void onInitialize() {
         BCCItems.register();
+        BCCBlocks.register();
+        BCCBlockEntityTypes.register();
         BCCPotions.register();
         BCCCreativeModeTabs.register();
     }

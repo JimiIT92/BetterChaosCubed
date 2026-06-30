@@ -34,7 +34,8 @@ public final class BCCCreativeModeTabs {
                     .displayItems((params, output) -> {
                         addContent(
                                 output,
-                                BCCItems.SULFUR_POWDER
+                                BCCItems.SULFUR_POWDER,
+                                BCCBlocks.WAXED_POTENT_SULFUR
                         );
                         addNauseaPotionItems(params, output);
                     })

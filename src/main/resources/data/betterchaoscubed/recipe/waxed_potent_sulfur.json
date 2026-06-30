@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "waxed_potent_sulfur",
+  "ingredients": [
+    "minecraft:potent_sulfur",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "betterchaoscubed:waxed_potent_sulfur"
+  }
+}
