@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.hendrix.betterchaoscubed.BetterChaosCubed;
+import org.hendrix.betterchaoscubed.block.entity.SulfurCampfireBlockEntity;
 import org.hendrix.betterchaoscubed.block.entity.WaxedPotentSulfurBlockEntity;
 import org.hendrix.betterchaoscubed.utils.IdentifierUtils;
 
@@ -18,6 +19,7 @@ public final class BCCBlockEntityTypes {
     //#region Block Entity Types
 
     public static final BlockEntityType<WaxedPotentSulfurBlockEntity> WAXED_POTENT_SULFUR = register("waxed_potent_sulfur", WaxedPotentSulfurBlockEntity::new, BCCBlocks.WAXED_POTENT_SULFUR);
+    public static final BlockEntityType<SulfurCampfireBlockEntity> SULFUR_CAMPFIRE = register("campfire", SulfurCampfireBlockEntity::new, BCCBlocks.SULFUR_CAMPFIRE);
 
     //#endregion
 

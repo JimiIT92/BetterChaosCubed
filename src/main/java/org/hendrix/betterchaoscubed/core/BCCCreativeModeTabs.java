@@ -35,7 +35,10 @@ public final class BCCCreativeModeTabs {
                         addContent(
                                 output,
                                 BCCItems.SULFUR_POWDER,
-                                BCCBlocks.WAXED_POTENT_SULFUR
+                                BCCBlocks.WAXED_POTENT_SULFUR,
+                                BCCItems.SULFUR_TORCH,
+                                BCCBlocks.SULFUR_LANTERN,
+                                BCCBlocks.SULFUR_CAMPFIRE
                         );
                         addNauseaPotionItems(params, output);
                     })

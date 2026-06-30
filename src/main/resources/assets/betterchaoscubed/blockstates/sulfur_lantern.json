@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "betterchaoscubed:block/sulfur_lantern"
+    },
+    "hanging=true": {
+      "model": "betterchaoscubed:block/sulfur_lantern_hanging"
+    }
+  }
+}

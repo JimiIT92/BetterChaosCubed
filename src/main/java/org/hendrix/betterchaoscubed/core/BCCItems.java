@@ -1,13 +1,17 @@
 package org.hendrix.betterchaoscubed.core;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.world.level.block.Block;
 import org.hendrix.betterchaoscubed.BetterChaosCubed;
 import org.hendrix.betterchaoscubed.utils.IdentifierUtils;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
@@ -18,8 +22,27 @@ public final class BCCItems {
     //#region Items
 
     public static final Item SULFUR_POWDER = register("sulfur_powder", Item::new, new Item.Properties());
+    public static final Item SULFUR_TORCH = registerBlock(
+            "sulfur_torch",
+            BCCBlocks.SULFUR_TORCH,
+            ((block, properties) -> new StandingAndWallBlockItem(block, BCCBlocks.SULFUR_WALL_TORCH, Direction.DOWN, properties)),
+            new Item.Properties()
+    );
 
     //#endregion
+
+    /**
+     * Register a Block Item
+     *
+     * @param name The item name
+     * @param block The base block
+     * @param itemFactory The item factory
+     * @param properties The {@link Item.Properties item properties}
+     * @return The registered {@link Item}
+     */
+    private static Item registerBlock(final String name, final Block block, final BiFunction<Block, Item.Properties, Item> itemFactory, final Item.Properties properties) {
+        return register(name, (p) -> itemFactory.apply(block, p), properties.useBlockDescriptionPrefix().requiredFeatures(block.requiredFeatures()));
+    }
 
     /**
      * Register an {@link Item}

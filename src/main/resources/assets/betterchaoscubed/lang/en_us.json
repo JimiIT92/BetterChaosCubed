@@ -1,7 +1,12 @@
 {
   "creativeTab.betterchaoscubed.betterchaoscubed": "Better Chaos Cubed",
-  "item.betterchaoscubed.sulfur_powder": "Sulfur Powder",
   "block.betterchaoscubed.waxed_potent_sulfur": "Waxed Potent Sulfur",
+  "block.betterchaoscubed.sulfur_fire": "Sulfur Fire",
+  "block.betterchaoscubed.sulfur_campfire": "Sulfur Campfire",
+  "block.betterchaoscubed.sulfur_torch": "Sulfur Torch",
+  "block.betterchaoscubed.sulfur_wall_torch": "Sulfur Wall Torch",
+  "block.betterchaoscubed.sulfur_lantern": "Sulfur Lantern",
+  "item.betterchaoscubed.sulfur_powder": "Sulfur Powder",
   "item.minecraft.tipped_arrow.effect.nausea": "Arrow of Nausea",
   "item.minecraft.potion.effect.nausea": "Potion of Nausea",
   "item.minecraft.splash_potion.effect.nausea": "Splash Potion of Nausea",

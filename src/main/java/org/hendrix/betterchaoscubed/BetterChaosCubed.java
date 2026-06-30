@@ -19,6 +19,7 @@ public final class BetterChaosCubed implements ModInitializer {
      */
     @Override
     public void onInitialize() {
+        BCCParticleTypes.register();
         BCCItems.register();
         BCCBlocks.register();
         BCCBlockEntityTypes.register();

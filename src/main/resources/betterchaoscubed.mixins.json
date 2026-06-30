@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "org.hendrix.betterchaoscubed.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "BaseFireBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

@@ -7,10 +7,13 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import org.hendrix.betterchaoscubed.BetterChaosCubed;
+import org.hendrix.betterchaoscubed.block.SulfurCampfireBlock;
+import org.hendrix.betterchaoscubed.block.SulfurFireBlock;
 import org.hendrix.betterchaoscubed.block.WaxedPotentSulfurBlock;
 import org.hendrix.betterchaoscubed.utils.IdentifierUtils;
 
@@ -24,6 +27,43 @@ public final class BCCBlocks {
     //#region Blocks
 
     public static final Block WAXED_POTENT_SULFUR = register("waxed_potent_sulfur", WaxedPotentSulfurBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POTENT_SULFUR));
+    public static final Block SULFUR_FIRE = registerBlockWithoutBlockItem(
+            "sulfur_fire",
+            SulfurFireBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.FIRE)
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .lightLevel(_ -> 13)
+    );
+    public static final Block SULFUR_CAMPFIRE = register(
+            "sulfur_campfire",
+            SulfurCampfireBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAMPFIRE)
+                    .lightLevel(_ -> 13)
+    );
+    public static final Block SULFUR_TORCH = registerBlockWithoutBlockItem(
+            "sulfur_torch",
+            (properties) -> new TorchBlock(BCCParticleTypes.SULFUR_FIRE_FLAME, properties),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH).lightLevel((state) -> 13)
+    );
+    public static final Block SULFUR_WALL_TORCH = registerBlockWithoutBlockItem(
+            "sulfur_wall_torch",
+            (properties) -> new WallTorchBlock(BCCParticleTypes.SULFUR_FIRE_FLAME, properties),
+            BlockBehaviour.Properties.of()
+                    .overrideLootTable(SULFUR_TORCH.getLootTable())
+                    .overrideDescription(SULFUR_TORCH.getDescriptionId())
+                    .noCollision()
+                    .instabreak()
+                    .lightLevel((state) -> 13)
+                    .sound(SoundType.WOOD)
+                    .pushReaction(PushReaction.DESTROY)
+    );
+    public static final Block SULFUR_LANTERN = register(
+            "sulfur_lantern",
+            LanternBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN)
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .strength(5F)
+    );
 
     //#endregion
 
