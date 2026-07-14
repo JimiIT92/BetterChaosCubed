@@ -5,7 +5,7 @@
 [![](http://cf.way2muchnoise.eu/full_1154885_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/hendrixs-better-chaos-cubed)
 [![](https://img.shields.io/modrinth/dt/b3i8I42nT?logo=modrinth&label=Modrinth&color=darkgreen)](https://modrinth.com/mod/hendrixs-better-chaos-cubed)
 
-Enhance Sulfur Cubes with redstone archetype, craftable nausea potions and more!
+Enhance the Chaos Cubed drop with craftable nausea potions, sulfur fire and more!
 
 -------------------------
 
