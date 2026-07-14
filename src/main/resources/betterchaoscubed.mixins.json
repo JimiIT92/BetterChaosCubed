@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "BaseFireBlockMixin",
-    "MonsterMixin"
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

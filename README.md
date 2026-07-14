@@ -11,6 +11,30 @@ Enhance Sulfur Cubes with redstone archetype, craftable nausea potions and more!
 
 ### 🎁 Features
 
+### Sulfur Fire, Torch, Lantern and Campfire
+
+Using flint and steel on a Sulfur Block will produce Sulfur Fire, a blue colored fire that deals 1.5 damage than regular fire.
+
+You can also use Sulfur to craft a Sulfur Torch, which can further be crafted into a Sulfur Lantern.
+
+Finally, using Sulfur you can also craft a Sulfur Campfire
+
+### Sulfur Powder and craftable gunpowder
+
+Sulfur Blocks can now sometimes drop Sulfur Powder, which can be crafted into gunpowder when combined with charcoal 
+
+### Nausea Potion and better nausea effect
+
+Using Sulfur Powder you can craft Nausea Potions (regular, splash, lingering and tipped arrows).
+
+Also, if an entity is affected by nausea, it will randomly stop moving as is confused by the effect.
+
+The effect will be applied to every living entity except the ones in the `betterchaoscubed:unaffected_by_nausea` entity tag
+
+### Waxed Potent Sulfur
+
+You can now wax Potent Sulfur to get the same particle effects but without the Nausea effect
+
 -------------------------
 
 ### 👨🏼‍💻 How to contribute
