@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-This repository contains the source code for [Hendrix's Better Christmas Chests](https://curseforge.com/minecraft/mc-mods/hendrixs-better-christmas-chests).
+This repository contains the source code for [Hendrix's Better Chaos Cubed](https://curseforge.com/minecraft/mc-mods/hendrixs-better-chaos-cubed).
 
 Only latest major release (and relative minors) will be supported. 
 
@@ -10,7 +10,7 @@ Any other release prior to these will be automatically considered deprecated as 
 
 ## Reporting a Vulnerability
 
-The only place to report a bug or an issue is the [Issue Tracker](https://github.com/JimiIT92/BetterChristmasChests/issues) of this repository.
+The only place to report a bug or an issue is the [Issue Tracker](https://github.com/JimiIT92/BetterChaosCubed/issues) of this repository.
 
 **DO NOT SEND EMAILS**.
 
